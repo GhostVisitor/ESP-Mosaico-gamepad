@@ -1,0 +1,16 @@
+# PlatformIO 构建产物
+.pio/
+
+# 编辑器
+.vscode/
+*.bak
+*.tmp
+
+# Python
+__pycache__/
+*.pyc
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

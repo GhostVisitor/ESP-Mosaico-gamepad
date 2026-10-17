@@ -1,0 +1,55 @@
+MIT License
+
+Copyright (c) 2026 阿飘Victor
+
+本文件适用于本工程的"应用层代码"，具体为以下文件：
+
+  src/main.c
+  src/config.h
+  src/keypad.c        src/keypad.h
+  src/gamepad.c       src/gamepad.h
+  src/uart.c          src/uart.h
+  src/usb_hid.c       src/usb_hid.h
+  src/usb_descr.c     src/usb_descr.h
+  tools/*
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+=================================================================================
+
+一、整体许可（重要）
+
+本工程链接了第三方的 GPL-3.0 代码（src/usb.h、src/usb_handler.c、src/usb_handler.h），
+按 GPL 的规定，**整个工程及其编译产物（firmware/*.hex、*.bin）以 GPL-3.0 发布**，
+详见同目录的 LICENSE。
+
+上面列出的应用层文件在 GPL-3.0 之外**额外**提供本 MIT 许可，即：
+  - 你可以单独取用这些文件，不受 GPL 约束；
+  - 但只要把它们与 src/usb.h、src/usb_handler.c、src/usb_handler.h 一起编译成固件，
+    最终的固件产物就必须遵守 GPL-3.0。
+
+二、不适用本许可的文件
+
+  - src/usb.h
+  - src/usb_handler.c        （以上两个与上游逐字节相同，未修改）
+  - src/usb_handler.h        （由上游同名文件改写而来，把 CDC 钩子换成了 HID 钩子）
+
+上述三个文件来自 Stefan Wagner 的 CH55x 开源库（经 UNIT-Electronics-MX 整理为
+PlatformIO 平台 unit_ch55x），采用 CC BY-SA 3.0 / GPL-3.0，**不适用**本 MIT 许可。
+再分发时请遵守其原始条款，详见 THIRD-PARTY.md、LICENSE-CC-BY-SA-3.0.txt。
